@@ -1,0 +1,214 @@
+# Expecting filename & sheet name of a input Excel & return a dat frame
+def generate_data(file, sheet_name):
+    data = pd.read_excel(file, sheet_name = sheet_name)
+    data = data.fillna('')
+    df = pd.DataFrame()
+    df['Description'] = data['S:Description']
+    return df
+# Combining all the sheets Test Steps & returning a combined data frame
+import pandas as pd
+final_df = pd.DataFrame()
+file = 'Pre execution test scripts (2).xlsx'
+for sheet_name in pd.ExcelFile(file).sheet_names:
+    final_df = pd.concat([final_df, generate_data(file, sheet_name)])
+
+def multiple_problem_Statement(data_df):
+    data.Description[0]
+    data.Statement[0]
+    from nltk import sent_tokenize
+    for i in range(len(data)):
+        data.iloc[i,0]=sent_tokenize(data.iloc[i,0])
+    wanted_keys=['Launch','Click','Select','Launch','Verify','Expand','Enter','add']
+    from collections import Counter
+    a=[]
+    for i in range(len(data.Description)):
+        for j in data.Description[i]:
+           a+=j.split()
+    counts =( Counter(a))
+    counts=dict(counts)
+    for key,val in counts.items():
+        if val>50:
+            print(key,":",val)
+    data.Description[0][0]
+    new_l=[]
+    for i in range(len(data)):
+        for j in range(len(data.Description[i])):
+            if "Note:" in data.Description[i][j] or "Role:" in data.Description[i][j]:
+                new_l.append(data.Description[i][:j])
+            else:
+                new_l.append(data.Description[i])
+    for i in range(len(data.Description)):
+        data.Description[i]=data.Description[i][0]
+    non_eng_words=[]
+    def my_cleaner(text):
+        from nltk.tokenize import sent_tokenize
+        list_for_clean_text=[]
+
+
+        Extra_token=["NA","Good","https",'dear',"http" ,'hi','team',"www.",'hello','regard','regards','please','Dear', 'Hi','Team','Hello','Thank','Regard', 'Please','Thank You','Thank you','thank you']
+        import re
+        text=" ".join(text.split())
+        for i in text.split():
+            if i in Extra_token or "http" in i or "https" in i or "www." in i or ".com" in i:
+                i=""
+            else:
+                list_for_clean_text.append(i)
+        text =" ".join(list_for_clean_text).replace("?",".")
+        text =  re.sub(r"\\t|\\n|\\r|#|<br>|$|","",text)
+        text =  re.sub(r"\t|\n|\r"," ",text)
+        text = re.sub("doesn´t", "does not", text, flags=re.IGNORECASE)
+        text = re.sub("isn’t", "is not", text, flags=re.IGNORECASE)
+        text = re.sub("What’s", "What is", text, flags=re.IGNORECASE)
+        text = re.sub("wasn’t", "was not", text, flags=re.IGNORECASE)
+        text = re.sub("won’t", "will not", text, flags=re.IGNORECASE)
+        text = re.sub("hasn’t", "has not", text, flags=re.IGNORECASE)
+        text = re.sub("haven’t", "have not", text, flags=re.IGNORECASE)
+        text = re.sub("hadn’t", "had not", text, flags=re.IGNORECASE)
+        text = re.sub("I’m", "I am", text, flags=re.IGNORECASE)
+        text = re.sub("don’t", "do not", text, flags=re.IGNORECASE)
+        text = re.sub("weren’t", "were not", text, flags=re.IGNORECASE)
+        text = re.sub("doesn’t", "does not", text, flags=re.IGNORECASE)
+        text = re.sub("(i|I)’ve", "I have", text, flags=re.IGNORECASE)
+        text = re.sub("(H|h)e’s", "He has", text, flags=re.IGNORECASE)
+        text = re.sub("(S|h)e’s", "She has", text, flags=re.IGNORECASE)
+        text = re.sub("(I|i)t’s", "It has", text, flags=re.IGNORECASE)
+        text = re.sub("You’ve", "You have", text, flags=re.IGNORECASE)
+        text = re.sub("(W|w)’ve", "We have", text, flags=re.IGNORECASE)
+        text = re.sub("(T|t)hey’ve", "They have", text, flags=re.IGNORECASE)
+        text = re.sub("(i|I)’d", "I had", text, flags=re.IGNORECASE)
+        text = re.sub("(H|h)e’d", "He had", text, flags=re.IGNORECASE)
+        text = re.sub("(S|h)e’d", "She had", text, flags=re.IGNORECASE)
+        text = re.sub("(I|i)t’d", "It had", text, flags=re.IGNORECASE)
+        text = re.sub("You’d", "You had", text, flags=re.IGNORECASE)
+        text = re.sub("(W|w)’d", "We had", text, flags=re.IGNORECASE)
+        text = re.sub("(T|t)hey’d", "They had", text, flags=re.IGNORECASE)
+        text = re.sub("can’t", "can not", text, flags=re.IGNORECASE)
+        text = re.sub("wouldn’t", "would not", text, flags=re.IGNORECASE)
+        text = re.sub("couldn’t", "could not", text, flags=re.IGNORECASE)
+        text = re.sub("mustn’t", "could not", text, flags=re.IGNORECASE)
+        text = re.sub("shan’t", "shall not", text, flags=re.IGNORECASE)
+        text = re.sub("shouldn’t", "should not", text, flags=re.IGNORECASE)
+        text = re.sub("(i|I)’ll", "I will", text, flags=re.IGNORECASE)
+        text = re.sub("(H|h)e’ll", "He will", text, flags=re.IGNORECASE)
+        text = re.sub("(S|h)e’ll", "She will", text, flags=re.IGNORECASE)
+        text = re.sub("(I|i)t’ll", "It will", text, flags=re.IGNORECASE)
+        text = re.sub("You’ll", "You will", text, flags=re.IGNORECASE)
+        text = re.sub("(W|w)’ll", "We will", text, flags=re.IGNORECASE)
+        text = re.sub("we’ll", "We will", text, flags=re.IGNORECASE)
+        text = re.sub("(T|t)hey’ll", "They will", text, flags=re.IGNORECASE)
+        text =  re.sub("(s|S)erviceA", "service", text, flags=re.IGNORECASE)
+        text =  re.sub("(w|W)orkspace", "workspace", text, flags=re.IGNORECASE)
+        text =  re.sub("it's","it is",text,flags=re.IGNORECASE)
+        text =  re.sub("’s"," is",text,flags=re.IGNORECASE)
+        text =  re.sub("(L|l)et’s","let us",text,flags=re.IGNORECASE)
+        text = re.sub(" whats ", " what is ", text, flags=re.IGNORECASE)
+        text =  re.sub("Toll"," Toll",text,flags=re.IGNORECASE) 
+        text =  re.sub("should’ve","should have",text,flags=re.IGNORECASE) 
+        text = re.sub("\'ve", " have ", text)
+        text = re.sub("can't", "can not", text)
+        text = re.sub("n't", " not ", text)
+        text = re.sub("n`t", " not ", text)
+        text = re.sub("didn’t", "did not", text, flags=re.IGNORECASE)
+        text = re.sub("i'm", "i am", text, flags=re.IGNORECASE)
+        text = re.sub("\'re", " are ", text)
+        text = re.sub("\'d", " would ", text)
+        text = re.sub("\'ll", " will ", text)
+        text = re.sub("e\.g\.", " eg ", text, flags=re.IGNORECASE)
+        text = re.sub("it´s", "it has", text, flags=re.IGNORECASE)
+        text = re.sub("doesn t", " does not ", text, flags=re.IGNORECASE)    
+        text = re.sub("(e|E) signatures", " esignatures ", text, flags=re.IGNORECASE)    
+        text = re.sub("https", " https", text, flags=re.IGNORECASE)    
+        text = re.sub("Feeditem", "Feed item", text, flags=re.IGNORECASE)    
+        text = re.sub("scenariosforService", "scenarios for Service", text, flags=re.IGNORECASE)    
+        #text = re.sub("(r|R)ef", " Refrence ", text, flags=re.IGNORECASE)    
+        text = re.sub("Modified", " Modified ", text, flags=re.IGNORECASE)    
+        text = re.sub("KONGMACAUKOREATAIWANJAPAN", " KONG MACAU KOREA TAIWAN JAPAN ", text, flags=re.IGNORECASE)    
+        text = re.sub("THAILANDHONG", " THAILAND HONG ", text, flags=re.IGNORECASE)    
+        text = re.sub("Published", " Published ", text, flags=re.IGNORECASE)    
+        text = re.sub("Modified", " Modified ", text, flags=re.IGNORECASE)    
+        text = re.sub("@(k|K)nowledge", " @knowledge ", text, flags=re.IGNORECASE)    
+        text = re.sub('CID', ' ', text)
+        text=text.replace("N/A"," ")
+        text=text.replace("/"," ")
+        text=text.replace("<<<"," ")
+        text=text.replace("‘","")
+        text=text.replace("’","")
+        text=text.replace("“","")
+        text=text.replace("”","")
+        text=text.replace('"',"")
+        text=text.replace('„',"")
+        text=text.replace("\xa0"," ")
+        text=text.replace("--"," ")
+        text=text.replace("-"," ")
+        text=text.replace("(","")
+        text=text.replace(")","")
+        text=text.replace("!",".")
+        text=text.replace("#","")
+        text=text.replace("$","")
+        text=text.replace(";","")
+        text=text.replace(":"," ")
+        text=text.replace("=","")
+        text=text.replace(">>"," ")
+        text=text.replace("***"," ")
+        text=text.replace("~"," ")
+        text=text.replace("+"," ")
+        text=text.replace(","," ")
+        text=text.replace("...."," ")
+        text=text.replace(". ."," ")
+        text=text.replace("> >"," ")
+        text=text.replace(">"," ")
+        text=text.replace("•","")
+        text=text.replace("["," ")
+        text=text.replace("]","")
+        text=text.replace("<","")
+        text=text.replace("–"," ")
+        text=text.replace("<hr","")
+        text=text.replace('|',"")
+        text=text.replace('..',"")
+        text=text.replace('…'," ")
+        text=text.replace("*","")
+        text=text.replace("_"," ")
+        text=text.replace("®"," ")
+
+        text=text.replace("morning","")
+        text=" ".join(text.split())
+        list_of_sentences=sent_tokenize(text)
+        for sent in list_of_sentences:
+            if sent.isascii():
+                text=text
+            else:
+                non_eng_words.append(sent)
+        return text
+    data['Description_1']=data.Description.apply(lambda a:my_cleaner(a))
+    new=[]
+    for i in data.Description_1:
+        new.append(sent_tokenize(i))
+    count=0
+    stmnt=[]
+    descrip=[]
+    for i in new:
+        for j in i:
+            words = j.split()
+            counts = {}
+            for word in words:
+                if word not in counts:
+                    counts[word] = 0
+                counts[word] += 1
+            for ll in wanted_keys:
+                for key,val in counts.items():
+                    if key==ll:
+                        if val>1:
+                            print(key,":",val)
+                            stmnt.append("Multiple")
+                            descrip.append(i)
+                        else:
+                            stmnt.append("Single")
+                            descrip.append(i)
+    up_df=pd.DataFrame({"Description":descrip,"Statement":stmnt})
+    for i in range(len(up_df)):
+        up_df.Description[i]=up_df.Description[i][0]
+    up_df.to_csv("multiple_statemnt_prob.csv",index=False)
+    return up_df
+import pandas as pd
+data=pd.read_excel('Processed_Pre_Execution_Test_Scripts.xlsx')
+multiple_problem_Statement(data)# function calling
