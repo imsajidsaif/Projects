@@ -1,3 +1,11 @@
 # Projects
-project No1: Fake news Detection using NLP,machine learning and Enhanced Pyhton Technique.
-project No2: 
+# Requirements:
+# Python : 3.7
+# OCR5 
+# Spacy
+# NLTK
+# Machine Learning Algorithms
+# Opencv
+# PIL
+
+
