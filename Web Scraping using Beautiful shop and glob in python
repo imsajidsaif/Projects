@@ -1,0 +1,179 @@
+from bs4 import BeautifulSoup
+import glob, os
+import pandas as pd
+os.chdir(r"C:\Users\Sajid\Amit work_tcs\HTML_FILES")
+heading = []
+value = []
+filename = "Document_text.txt"
+f = open(filename,'w')
+headers = "id,title,Service_Offering,Case_Number,Externalizable,GPM_Approval\n"
+f.write(headers)
+for file in glob.glob("*.html"):
+
+    soup = BeautifulSoup(open(file, encoding='utf-8'), "html.parser")
+    
+    # Thsi will give you Page Header
+    
+#  
+    
+    title = soup.h1.text
+  
+# This will give you Div Zero
+        # Key Column 
+    div_0 = soup.find_all('div',{'id':'j_id0:j_id8:j_id9:j_id253:j_id255:0:j_id256'})
+    div0_column_one = div_0[0].find_all('span',{'class':'helpButton'})
+    div0_column_one = div0_column_one[0].find(text=True,recursive=False)
+        # Value Column
+    div0_column_two = div_0[0].find_all('td',{'class':'data2Col first last'})
+    div0_column_two = div0_column_two[0].text
+    
+    try:
+        if div0_column_one is None: # The variable
+            heading.append('It is None')
+    except NameError:
+        heading.append("This variable is not defined")
+    else:
+        heading.append(div0_column_one)
+    
+    
+    try:
+        if div0_column_two is None: # The variable
+            value.append('It is None')
+    except NameError:
+        value.append("This variable is not defined")
+    else:
+        value.append(div0_column_two)
+    
+    
+# This will give you Div one
+        # Key Column
+    div_1 = soup.find_all('div',{'id':'j_id0:j_id8:j_id9:j_id253:j_id255:1:j_id256'})
+    div1_column_one = div_1[0].find_all('th',{'class':'labelCol vfLabelColTextWrap first last'})
+    div1_column_one = div1_column_one[0].text
+        # Value Column
+    div1_column_two = div_1[0].find_all('span',{'id':'j_id0:j_id8:j_id9:j_id253:j_id255:1:j_id256:j_id257'})
+    div1_column_two = div1_column_two[0].text
+    
+    try:
+        if div1_column_one is None: # The variable
+            heading.append('It is None')
+    except NameError:
+        heading.append("This variable is not defined")
+    else:
+        heading.append(div1_column_one)
+    
+    
+    try:
+        if div1_column_two is None: # The variable
+            value.append('It is None')
+    except NameError:
+        value.append("This variable is not defined")
+    else:
+        value.append(div1_column_two)
+    
+    
+    
+# This will give you Div Two
+        # Key Column
+    div_2 = soup.find_all('div',{'id':'j_id0:j_id8:j_id9:j_id253:j_id255:2:j_id256'})
+    div2_column_one = div_2[0].find_all('span',{'class':'helpButton'})
+    div2_column_one = div2_column_one[0].find(text=True, recursive=False)
+        # Value Column
+    div2_column_two = div_2[0].find_all('span',{'id':'j_id0:j_id8:j_id9:j_id253:j_id255:2:j_id256:j_id257'})
+    div2_column_two = div2_column_two[0].img['title']
+    
+    try:
+        if div2_column_one is None: # The variable
+            heading.append('It is None')
+    except NameError:
+        heading.append("This variable is not defined")
+    else:
+        heading.append(div2_column_one)
+    
+    
+    try:
+        if div2_column_two is None: # The variable
+            value.append('It is None')
+    except NameError:
+        value.append("This variable is not defined")
+    else:
+        value.append(div2_column_two)
+    
+    
+    
+    
+# This will give you Div Three
+        # Key Column
+    div_3 = soup.find_all('div',{'id':'j_id0:j_id8:j_id9:j_id253:j_id255:3:j_id256'})
+    div3_column_one = div_3[0].find_all('span',{'class':'helpButton'})
+    div3_column_one = div3_column_one[0].find(text=True, recursive=False)
+        # Value Column
+    div3_column_two = div_3[0].find_all('span',{'id':'j_id0:j_id8:j_id9:j_id253:j_id255:3:j_id256:j_id257'})
+    div3_column_two = div3_column_two[0].img['title']
+    
+    try:
+        if div3_column_one is None: # The variable
+            heading.append('It is None')
+    except NameError:
+        heading.append("This variable is not defined")
+    else:
+        heading.append(div3_column_one)
+    
+    
+    try:
+        if div3_column_two is None: # The variable
+            value.append('It is None')
+    except NameError:
+        value.append("This variable is not defined")
+    else:
+        value.append(div3_column_two)
+    
+    
+# This will give you Div Four
+        # Key Column
+    div_4 = soup.find_all('div',{'id':'j_id0:j_id8:j_id9:j_id253:j_id255:4:j_id256'})
+    div4_column_one = div_4[0].find_all('span',{'class':'helpButton'})
+    div4_column_one = div4_column_one[0].find(text=True, recursive=False)
+        # Value Column
+    div4_column_two = div_4[0].find_all('span',{'id':'j_id0:j_id8:j_id9:j_id253:j_id255:4:j_id256:j_id257'})
+    div4_column_two = div4_column_two[0].text
+    
+    #removing new lines from the statement
+    div4_column_two = div4_column_two.split("\n")
+    
+    
+    str = ''
+    for i in div4_column_two:
+        str+=i
+#     print(str)
+    
+    div4_column_two = str
+    div4_column_two = div4_column_two.replace(",", " |")
+    div4_column_two = div4_column_two.replace(".", " |")
+    div4_column_two = div4_column_two.replace("\t", " ")
+    
+    
+    try:
+        if div4_column_one is None: # The variable
+            heading.append('It is None')
+    except NameError:
+        heading.append("This variable is not defined")
+    else:
+        heading.append(div4_column_one)
+    
+    
+    try:
+        if div4_column_two is None: # The variable
+            value.append('It is None')
+    except NameError:
+        value.append("This variable is not defined")
+    else:
+        value.append(div4_column_two)
+    
+    f.write(file + ',' + title.replace(",", "|") + ',' + div0_column_two.replace(",", "|") + ',' + div1_column_two.replace(",", "|") + ',' + div2_column_two.replace(",", "|") + ',' + div3_column_two.replace(",", "|") + ',' + div4_column_two + "\n")
+
+f.close()
+
+    
+    
+    
