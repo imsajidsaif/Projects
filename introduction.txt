@@ -1,0 +1,79 @@
+My name is sajid saifi,from Ghaziabad,utter pradesh,currently i'm working with TCS research and innovaation unit,
+their i have worked for data science and machine learning  product development,in which we are working on different types of bussness problem test cases.
+and we are trying to solve same problem with help of machine learning/AI and data science trending technologies. 
+and ,Earlier i was worling as a data analyst intern in wipro.So i have totally 2+ year of experiance in data science and machine learning with 
+ i have done so many certificcation,trainings in these feilds.
+if if i'm talking about my college background so i  have completed my b.tech from lovely professional university punjab.
+and my hobies is just travelling and listening musinc ya that's all my side.
+
+
+
+
+
+
+
+
+
+
+Firtly i will tell you who gives us this project,and what are the objectives of this project.
+Project name: Mergining stops
+Projects is based on Postnord,sewdona and denmark,
+the Objective​ of project is 
+Postnord delivers huge number of parcels every day and pays its drivers based on number of stops that they take during delivery. 
+A team manually merges these stops considering different scenarios to reduce cost of driver settlement.​
+
+So,we are making  a product to assess the extent of automation possible for automating the stops merging process.​
+
+Scope ​
+To check  the extent of automation that is possible for merging of stops for daily packages delivered and potential accuracy​.
+If i'm taking about language which Postnoed is using 
+Language: English language and  special characters  from ISU-85991 database.​
+
+
+if i'm taking about Scenarios to be Considered for Merging​:
+
+1.Same Name + Same Address + Same Time + Different Stop = Merge​
+2.Similar** Name + Same Address + Same Time + Different Stop = Merge​  (**Similar here means changes in case,
+ occurrence of special characters, misspelled words or missing characters/numbers.​)
+3. Different Name + Same Address  + Same Time + Different Stop = Merge​
+4. Different Transport Task Number + Same Name + Same Address + Same Time + Different Stop = No Merge​
+
+after that we are creating dataset to predict same types of stops by using machine learning algorithm.
+
+Dataset:  transport id,name,address,city,zipcode,area_distance_from_origin_center,stops(target feature)
+
+Technology : Python,NLP,Flask,machine learning algorithm,Postgreesql,Similarity Matching Algorithms(FuzzywuzzY),optimized automation using python.
+
+
+
+
+2, project was mostly focused on document validation system.
+Project name: Computer Validation System
+Project is based on USA client(pharmesyy).
+the main objective was to validate Document with proper Intructions ,firstly for testing purpose we verify the CSV product with original Document . ly 
+in this project totally 10 cases are there,
+1.first -2 test cases were basically based on OCR(Optical character recognition),in which are extract required information information from different type,
+of files,like images filem pdfs,etc. with help of ocr,
+2. next 3 test cases were based on automation part,in which we are verifying the timestamp,product names,taxes,total amount and descriptions
+ part of document with orignal data.
+3. 6 test cases was very crusial which was based on approval part,like we are cross check the status of the medical application ,it's approved,not approved
+in process ,reject,like that.
+4. 7th testcase was based on the machine learning task,in which try to
+ predict weather no of steps mentioned in application is multiple or single,it's was binary calssification based problem.
+5. 8th test cases was based on sentiment analysis part,in which we were extract the feedback part from  pdf application and try to predict weather
+ this feedback text is positive,negative,neurtal etc.in this we had used python,OCR,NLP,and machine learning algorithm.
+6.9th and 10th test cases are mostly depend on checking accuracy of each test cases and create dashbord in form of pie chart and bar chart.
+
+ya that's all
+
+Technology : Python,NLP,Flask,machine learning algorithm,SQLalchemy,optimized automation using python,OCR.
+
+
+
+
+
+
+
+
+
+
