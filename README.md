@@ -18,3 +18,4 @@ https://doselect.com/gateways/test?access_code=GIu%2B%2BlyTXz53FTxNdxFYR3cSOy7fz
 
 https://doselect.com/gateways/test?access_code=G7CcDiCVdExzQ7lvSHmlLzKjsOPdRXx%2BMch%2BseX4/gjr%2BIQppbzhiCBGfl6GVEOc
 
+https://glu.zoom.us/j/95655978890?pwd=NTgxNmJubzhQa1V2Q2dFWVlYVFRoZz09
