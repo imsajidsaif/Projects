@@ -38,3 +38,9 @@ https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-j
 
 
 https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_ZTYxNTNiMTktZGIyNC00YzI0LWFhNzgtNjE5ODFkYzVkNjYw%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%25224bf30310-e4f1-4658-9e34-9e8a5a193ed1%2522%252c%2522Oid%2522%253a%25226cb83017-a861-408d-9008-ca3997b66b16%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=2c6d614f-fa56-4b20-8bbd-1b550325f2b7&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true
+
+
+
+
+https://www.google.com/url?q=https://zoom.us/j/97003684760?pwd%3DZDkxUjQrbUVObnRGdmMrWGVsRmVFUT09&sa=D&source=calendar&ust=1628942223882621&usg=AOvVaw3xPuVYGIeN7YUrMz80FLRE
+
