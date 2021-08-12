@@ -44,3 +44,10 @@ https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-j
 
 https://www.google.com/url?q=https://zoom.us/j/97003684760?pwd%3DZDkxUjQrbUVObnRGdmMrWGVsRmVFUT09&sa=D&source=calendar&ust=1628942223882621&usg=AOvVaw3xPuVYGIeN7YUrMz80FLRE
 
+
+
+
+
+https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ameeting_YTVkMDNiZWQtOWZmNy00OTZkLWFmZTktZGU3NzhlODJhODhi%40thread.v2%2F0%3Fcontext%3D%257b%2522Tid%2522%253a%2522927e65b8-7ad7-48db-a3c6-c42a67c100d6%2522%252c%2522Oid%2522%253a%2522408fa0ce-5ad9-461c-8aaf-899dcd83e617%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=881f7424-299b-4e7f-9ba8-4fe87c01be99&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true
+
+
